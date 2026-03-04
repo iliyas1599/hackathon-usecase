@@ -15,18 +15,18 @@ Order-service Java microservice.
 1. Build microservices on local
 2. Docker build microservice
 3. Create Kubernetes YAML files. (Internal - helm charts)
-3. Push to GCR / ACR
+3. Push to GCR / ACR / ECR
 ### CD Deployment
-1. Pull from GCR / ACR
-2. Deploy on GKE / AKS
+1. Pull from GCR / ACR / ECR
+2. Deploy on GKE / AKS / EKS
 
 ### Secrets
-1. Azure KeyVault
+1. Azure KeyVault / AWS Secret Manager
 
 For Containternization use Docker, Terraform for IaC, Github Action / Azure DevOps for CI/CD pipelines.
 
 ### Monitoring and Logging: 
-Set up basic monitoring and logging using Azure Monitor and other services / GCP.
+Set up basic monitoring and logging using Azure Monitor and other services / GCP / AWS Services.
 
 ### Containerization: 
 You need to containerize these microservices using Docker.
@@ -34,7 +34,7 @@ You need to containerize these microservices using Docker.
 ### Infrastructure as Code (Terraform):
 
 Set up a Terraform project structure supporting multiple environments (dev, staging, prod).
-Provision the following Azure / GCP resources:
+Provision the following in Azure / GCP / AWS resources:
 VPC with public and private subnets across two availability zones
 IAM roles and security groups
 Storage for Terraform state storage
@@ -42,7 +42,7 @@ State locking
 (Other resources specific to your chosen track)
 Terraform State Management:
 
-Implement remote state storage using Blob Storage / GCP Files
+Implement remote state storage using Blob Storage / GCP Files / AWS S3
 Set up state locking
 Configure workspace separation for different environments
 
